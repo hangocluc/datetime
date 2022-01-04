@@ -16,6 +16,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    DateTime nowss = DateTime.parse('2001-04-25');
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -34,10 +35,8 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(),
         body: Column(
           children: [
-            DropDownButton(
-              dropDownCubit: DropDownCubit(),
-            ),
-          //  DateTimeBase(),
+            DropDownButton(dropDownCubit: DropDownCubit(), dateStart: nowss),
+            //  DateTimeBase(),
             Text("234234234")
           ],
         ),

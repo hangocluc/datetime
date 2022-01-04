@@ -41,20 +41,20 @@ class DropDownCubit extends BaseCubit<DropDownState> {
       month = '${time.month}';
     }
 
-    // endDate
-    String dayEnd, monthEnd;
-    if (time.day < 10) {
-      dayEnd = '0${time.day}';
-    } else {
-      dayEnd = '${time.day}';
-    }
-    if (time.month < 10) {
-      monthEnd = '0${time.month}';
-    } else {
-      monthEnd = '${time.month}';
-    }
     //
     if (endDate != null) {
+      // endDate
+      String dayEnd, monthEnd;
+      if (endDate.day < 10) {
+        dayEnd = '0${endDate.day}';
+      } else {
+        dayEnd = '${endDate.day}';
+      }
+      if (endDate.month < 10) {
+        monthEnd = '0${endDate.month}';
+      } else {
+        monthEnd = '${endDate.month}';
+      }
       if (changeOption == 'Tuần') {
         return "$day,$month - $dayEnd Tháng $monthEnd, ${endDate.year}";
       } else {

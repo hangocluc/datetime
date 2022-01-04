@@ -10,8 +10,13 @@ import '../../../base_string.dart';
 
 class DropDownButton extends StatefulWidget {
   final DropDownCubit dropDownCubit;
+  final DateTime dateStart;
+  final DateTime? dateTo;
 
-  const DropDownButton({Key? key, required this.dropDownCubit})
+  const DropDownButton(
+      {Key? key,
+      required this.dropDownCubit,
+      required this.dateStart, this.dateTo})
       : super(key: key);
 
   @override
@@ -21,7 +26,7 @@ class DropDownButton extends StatefulWidget {
 class _DropDownButtonState extends State<DropDownButton> {
   @override
   void initState() {
-    widget.dropDownCubit.getState();
+    widget.dropDownCubit.getDateToString(widget.dateStart, widget.dateTo);
     super.initState();
   }
 
@@ -34,7 +39,7 @@ class _DropDownButtonState extends State<DropDownButton> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           const SizedBox(
-            width: 16,
+            width: 8,
           ),
           Expanded(
             flex: 3,
@@ -60,7 +65,7 @@ class _DropDownButtonState extends State<DropDownButton> {
             ),
           ),
           Expanded(
-            flex: 7,
+            flex: 8,
             child: Container(
               padding: const EdgeInsets.only(top: 8),
               child: Row(
@@ -104,7 +109,7 @@ class _DropDownButtonState extends State<DropDownButton> {
                 showDateCubit: ShowDateCubit(),
               )),
           const SizedBox(
-            width: 16,
+            width: 8,
           ),
         ],
       ),
